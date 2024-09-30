@@ -1,0 +1,322 @@
+* {
+	border: none;
+	border-radius: 10px;
+	font-family: "Cartograph CF", "Phosphor-Bold";
+	font-size: 17px;
+	min-height: 10px;
+	transition: all 0.1s ease-in-out;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+#window {
+	margin-top: 4px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 10px;
+	color: transparent;
+	background: transparent;
+}
+
+#custom-gsconnnect {
+	margin-top: 4px;
+	margin-left: 12px;
+	font-size: 4px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	background: #1f1d2e;
+	color: #eb6f92;
+
+}
+
+#network {
+	margin-top: 4px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	background: #1f1d2e;
+	color: #31748f;
+}
+
+#wireplumber {
+	margin-top: 4px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	background: #1f1d2e;
+	color: #c4a7e7;
+}
+
+#power-profiles-daemon {
+	margin-top: 4px;
+	margin-left: 8px;
+	margin-right: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px 0 0 10px;
+	color: #f6c177;
+	background: #1f1d2e;
+}
+
+#gamemode {
+	margin-top: 4px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	border-radius: 0px;
+	padding-right: 10px;
+	padding-left: 0px;
+	background: #1f1d2e;
+	color: #c4a7e7;
+}
+
+#idle_inhibitor {
+	margin-top: 4px;
+	margin-bottom: 0px;
+	border-radius: 0px;
+	background: #1f1d2e;
+	color: #908caa;
+}
+
+#idle_inhibitor.activated {
+	color: #ebbcba;
+}
+
+#backlight {
+	margin-top: 4px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	background: #1f1d2e;
+	color: #f6c177;
+}
+
+#battery {
+	margin-top: 4px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	color: #f6c177;
+	background: #1f1d2e;
+}
+
+#battery.charging,
+#battery.plugged {
+	color: #9ccfd8;
+	background-color: #1f1d2e;
+}
+
+#battery.critical:not(.charging) {
+	background-color: #1f1d2e;
+	color: #eb6f92;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes blink {
+	to {
+		background-color: #BF616A;
+		color: #B5E8E0;
+	}
+}
+
+#custom-backlight {
+	margin-top: 4px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	background: #1f1d2e;
+	color: #F8BD96;
+}
+
+#clock,
+#custom-clock {
+	margin-top: 4px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	background: #1f1d2e;
+	color: #ebbcba;
+}
+
+#memory {
+	margin-top: 4px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	border-radius: 10px;
+	background: #1f1d2e;
+	color: #c4a7e7;
+}
+
+#cpu {
+	margin-top: 4px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	border-radius: 10px;
+	background: #1f1d2e;
+	color: #908caa;
+}
+
+#tray {
+	margin-top: 4px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	border-radius: 10px;
+	color: #e0def4;
+	background: #1f1d2e;
+}
+
+#custom-launcher {
+	font-size: 22px;
+	margin-top: 4px;
+	margin-left: 8px;
+	padding: 5px 10px;
+	/* padding-right: 5px; */
+	border-radius: 10px;
+	color: #9ccfd8;
+	background: #1f1d2e;
+}
+
+#custom-power {
+	font-size: 20px;
+	margin-top: 4px;
+	margin-right: 8px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-radius: 0 10px 10px 0;
+	background: #1f1d2e;
+	color: #eb6f92;
+}
+
+#mpris {
+	margin-top: 4px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	border-radius: 10px;
+	background: #1f1d2e;
+	color: #e0def4;
+	transition: all 0.2s ease-in-out;
+}
+
+#image {
+	margin-top: 3px;
+	border-radius: 10px;
+}
+
+#custom-spotify {
+	margin-top: 4px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	color: #1f1d2e;
+	background: #ebbcba;
+}
+
+#custom-cava {
+	margin-top: 4px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	border-radius: 10px;
+	background: #1f1d2e;
+	color: #c4a7e7;
+	font-size: 22px;
+	font-family: "bargraph";
+	transition: none;
+}
+
+#window {
+	border-radius: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#workspaces button {
+	margin-top: 4px;
+	margin-bottom: 0px;
+	padding: 0 7px;
+	border-radius: 0;
+	background: #1f1d2e;
+	color: #6e6a86;
+	transition: color 0.2s ease-in-out;
+}
+
+#workspaces button:first-child {
+	padding-left: 12px;
+	border-radius: 10px 0 0 10px;
+	margin-left: 8px;
+}
+
+#workspaces button:last-child {
+	padding-right: 12px;
+	border-radius: 0 10px 10px 0;
+}
+
+#workspaces button:first-child:last-child {
+	border-radius: 10px;
+	padding: 0 12px;
+	margin-left: 8px;
+	border-radius: 10px;
+}
+
+#workspaces button.active {
+	color: #e0def4;
+	background: #1f1d2e;
+}
+
+#window {
+	margin-top: 4px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	border-radius: 10px;
+	background-color: #1f1d2e;
+	color: #e0def4;
+}
+
+window#waybar.empty {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	background-color: transparent;
+}
+
+window#waybar.empty #window {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	background-color: transparent;
+}

@@ -1,0 +1,228 @@
+{
+	"layer": "top",
+	// Using margin-bottom with a negative value in order to reduce the space between Hyprland window and waybar
+	"margin-bottom": -20,
+	"margin-top": 8,
+	"modules-left": [
+		"custom/launcher",
+		"clock",
+		// "custom/clock",
+		"niri/workspaces",
+		"niri/window"
+	],
+	"modules-center": [
+		"image",
+		"custom/cava",
+		"mpris"
+	],
+	"modules-right": [
+		"tray",
+		"wireplumber",
+		"backlight",
+		//"custom/gsconnect",
+		"network",
+		"battery",
+		"power-profiles-daemon",
+		"gamemode",
+		"idle_inhibitor",
+		"custom/power"
+	],
+	"power-profiles-daemon": {
+		"format": "{icon}",
+		"tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+		"tooltip": true,
+		"format-icons": {
+			"default": "",
+			"performance": "",
+			"balanced": "",
+			"power-saver": ""
+		}
+	},
+	"wireplumber": {
+		"tooltip": true,
+		"format": "{icon} {volume}%",
+		"format-muted": "{icon} {volume}%",
+		"on-click": "swayosd-client --output-volume mute-toggle",
+		"on-click-right": "pwvucontrol",
+		"on-scroll-up": "swayosd-client --output-volume -1",
+		"on-scroll-down": "swayosd-client --output-volume +1",
+		"format-icons": {
+			"default": [
+				"",
+				"",
+				"",
+				""
+			]
+		}
+	},
+	"image": {
+		"exec": "~/.config/waybar/scripts/album_art.sh",
+		"size": 32,
+		"interval": 5
+	},
+	"mpris": {
+		"interval": 10,
+		"max-length": 24,
+		"format": "{player_icon} {title}",
+		"format-paused": "{status_icon} <i>{dynamic}</i>",
+		"on-click": "playerctl play-pause",
+		"scroll-step": 5.0,
+		"smooth-scrolling-threshold": 1,
+		"player-icons": {
+			"chromium": "",
+			"firefox": "",
+			"youtube": "",
+			"default": "",
+			"kdeconnect": "",
+			"mpv": "",
+			"spotify": "",
+			"vlc": "󰕼",
+			"tidal": "",
+			"tidal-hifi": ""
+		},
+		"status-icons": {
+			"paused": "",
+			"playing": "",
+			"stopped": "",
+		},
+		// "ignored-players": ["firefox"]
+	},
+	"network": {
+		// "interface": "wlp2*", // (Optional) To force the use of this interface
+		"format-wifi": "",
+		"format-ethernet": "",
+		"tooltip-format": "{essid} ({signalStrength}%)",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "",
+		"format-alt": "{ifname}: {ipaddr}/{cidr}"
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 20
+		},
+		"format": "{icon} {capacity}%",
+		"format-charging": " {capacity}%",
+		"format-plugged": " {capacity}%",
+		"format-alt": "{time} {icon}",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"backlight": {
+		"format": "{icon} {percent}%",
+		"on-scroll-up": "swayosd-client --brightness -1",
+		"on-scroll-down": "swayosd-client --brightness +1",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"tray": {
+		"icon-size": 18,
+		"spacing": 10
+	},
+	"custom/clock": {
+		"format": " {}",
+		"exec": "date +'%I:%M'",
+		"interval": 1
+	},
+	"clock": {
+		"format": " {:%I:%M}",
+		"interval": 1,
+		"tooltip": true,
+		"tooltip-format": "{calendar}",
+		"timezone": "America/Argentina/Buenos_Aires",
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"format": {
+				"today": "<span color='#f6c177'>{}</span>",
+			}
+		}
+	},
+	"cpu": {
+		"interval": 15,
+		"format": " {}%",
+		"max-length": 10
+	},
+	"gamemode": {
+		"format": "{glyph}",
+		"glyph": "",
+		"use-icon": false,
+		"icon-spacing": 0,
+		"icon-size": 0,
+		"tooltip": true,
+		"tooltip-format": "Games running: {count}"
+	},
+	"memory": {
+		"interval": 30,
+		"format": " {}%",
+		"max-length": 10
+	},
+	"custom/spotify": {
+		"interval": 1,
+		"return-type": "json",
+		"exec": "~/.config/waybar/scripts/spotify.sh",
+		"exec-if": "pgrep spotify",
+		"escape": true
+	},
+	"custom/launcher": {
+		"format": " ",
+		"on-click": "anyrun"
+	},
+	"custom/power": {
+		"format": "",
+		"on-click": "wlogout"
+	},
+	// "custom/cava": {
+	// 	"exec": "sleep 3 && cava -p ~/.config/waybar/cava.conf | sed -u 's/;//g;s/0/0/g;s/1/1/g;s/2/2/g;s/3/3/g;s/4/4/g;s/5/5/g;s/6/6/g;s/7/7/g;s/8/8/g;s/9/9/g;'"
+	// },
+	"custom/cava": {
+		"exec": "$HOME/.config/waybar/scripts/cava.sh"
+	},
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		}
+	},
+	"custom/gsconnect": {
+		"format": " {}",
+		"escape": true,
+		"exec": "python3 $HOME/.config/waybar/scripts/gsconnect-status.py",
+		"return-type": "json",
+		"tooltip": "{tooltip}",
+		"interval": 30,
+		"on-click": "/usr/share/gnome-shell/extensions/gsconnect@andyholmes.github.io/gsconnect-preferences"
+	},
+	"niri/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			// "active": "",
+			// "default": ""
+			"default": ""
+		}
+	},
+	"niri/window": {
+		"format": "{title}",
+		"icon": true,
+		"max-length": 20,
+		"icon-size": 20,
+		"rewrite": {
+			"(.*) - Mozilla Firefox": "$1",
+			"(.*) - Visual Studio Code": "$1",
+			"(.*) - Inertia": "🚀 #$1",
+			"^\\s*$": "Dialog"
+		}
+	}
+}
